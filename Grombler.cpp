@@ -1,3 +1,4 @@
+#include <ctime>
 #include <string>
 #include <sstream>
 #include <stdio.h>
@@ -5,6 +6,11 @@
 #include "Grombler.h"
 
 const int Grombler::GROMBLE_FACTOR = 50;
+
+Grombler::Grombler()
+{
+	srand(time(0));
+}
 
 int Grombler::Gromble(int grombleTarget)
 {
