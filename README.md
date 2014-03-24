@@ -1,5 +1,7 @@
 AvidSquirrel
 ============
+Recommended installs to be able to compile this stuff: [MinGW32][MinGW32] (with C++ and MSYS) and [Git Bash][GitBash] or [Cygwin][Cygwin]
+
 Compiling a single file into an executable on the command line (where exec_name is the desired name of the executable)
 
 ```$ g++ main.cpp -o exec_name```
@@ -55,3 +57,6 @@ A debugging session is active.
 
 Quit anyway? (y or n) y
 ```
+[MinGW32]: http://www.mingw.org/
+[GitBash]: http://git-scm.com/downloads
+[Cygwin]: http://www.cygwin.com/
