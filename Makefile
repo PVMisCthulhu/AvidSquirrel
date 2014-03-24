@@ -1,17 +1,17 @@
-OBJS = Grombler.o main.o
+TARGET = avid_squirrel
+SOURCES = $(shell echo *.cpp)
+HEADERS = $(shell echo *.h)
+OBJECTS = $(SOURCES:.cpp=.o)
 CC = g++
 DEBUG = -g
-CFLAGS = -Wall -c $(DEBUG)
-LFLAGS = -Wall $(DEBUG)
+FLAGS = -Wall
+BINDIR = $(DESTDIR)/bin
 
-p1: $(OBJS)
-	$(CC) $(LFLAGS) $(OBJS) -o avid
+all: $(TARGET)
 
-Grombler.o: Grombler.cpp Grombler.h
-	$(CC) $(CFLAGS) Grombler.cpp
+$(TARGET): $(OBJECTS)
+	$(CC) $(FLAGS) $(DEBUG) -o $(TARGET) $(OBJECTS)
 
-main.o: main.cpp Grombler.h
-	$(CC) $(CFLAGS) main.cpp
-
+.PHONY: clean
 clean:
 	\rm *.o 
