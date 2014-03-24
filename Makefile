@@ -1,11 +1,17 @@
-p1: Grombler.o main.o
-	g++ -Wall Grombler.o main.o -o avid
+OBJS = Grombler.o main.o
+CC = g++
+DEBUG = -g
+CFLAGS = -Wall -c $(DEBUG)
+LFLAGS = -Wall $(DEBUG)
+
+p1: $(OBJS)
+	$(CC) $(LFLAGS) $(OBJS) -o avid
 
 Grombler.o: Grombler.cpp Grombler.h
-	g++ -Wall -c Grombler.cpp
+	$(CC) $(CFLAGS) Grombler.cpp
 
 main.o: main.cpp Grombler.h
-	g++ -Wall -c main.cpp
+	$(CC) $(CFLAGS) main.cpp
 
 clean:
 	\rm *.o 
