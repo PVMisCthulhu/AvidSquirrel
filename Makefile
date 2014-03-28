@@ -11,6 +11,9 @@ all: $(TARGET)
 $(TARGET): $(OBJECTS)
 	$(CC) $(FLAGS) -o $(TARGET) $(OBJECTS)
 
+%.o:%.cpp
+	$(CC) $(FLAGS) -c $+
+
 .PHONY: clean
 clean:
 	\rm *.o 
