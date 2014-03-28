@@ -4,13 +4,12 @@ HEADERS = $(shell echo *.h)
 OBJECTS = $(SOURCES:.cpp=.o)
 CC = g++
 DEBUG = -g
-FLAGS = -Wall
-BINDIR = $(DESTDIR)/bin
+FLAGS = -Wall $(DEBUG)
 
 all: $(TARGET)
 
 $(TARGET): $(OBJECTS)
-	$(CC) $(FLAGS) $(DEBUG) -o $(TARGET) $(OBJECTS)
+	$(CC) $(FLAGS) -o $(TARGET) $(OBJECTS)
 
 .PHONY: clean
 clean:
